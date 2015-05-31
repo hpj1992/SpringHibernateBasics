@@ -30,7 +30,7 @@ public class EmployeeDAOImpl {
 		Employee toReturn= (Employee) session.get(Employee.class,id);
 		Address address=toReturn.getAddress();
 		System.out.println(address.getCity());
-		session.close();
+		//session.close();
 		return toReturn;
 		
 	}

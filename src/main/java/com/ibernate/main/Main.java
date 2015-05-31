@@ -4,9 +4,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.hibernate.Address;
 import com.hibernate.Employee;
+import com.hibernate.Phone;
 import com.hibernate.Sponsor;
 import com.hibernate.DAOImpl.AddressDAOImpl;
 import com.hibernate.DAOImpl.EmployeeDAOImpl;
+import com.hibernate.DAOImpl.PhoneDAOImpl;
 import com.hibernate.DAOImpl.SponsorDAOImpl;
 
 public class Main {
@@ -17,7 +19,7 @@ public class Main {
         AddressDAOImpl addressDAOImpl = context.getBean(AddressDAOImpl.class);
         SponsorDAOImpl sponsorDAOImpl=  context.getBean(SponsorDAOImpl.class);
         EmployeeDAOImpl employeeDAOImpl=context.getBean(EmployeeDAOImpl.class);
-        
+        PhoneDAOImpl phoneDAOImpl=context.getBean(PhoneDAOImpl.class);
         Address address = new Address();
         address.setCity("vadodara");
         address.setStreet("baroda");
@@ -43,6 +45,11 @@ public class Main {
 */       /// employeeDAOImpl.save(emp);
        Employee empl=(Employee)employeeDAOImpl.getEmployee(3);
        System.out.println(empl.getName());
-       
+       System.out.println(empl.getPhones().size());
+       System.out.println(empl.getSponsors().size());
+      /* Phone phone=new Phone();
+       phone.setEmployee_id(3);
+       phone.setPhone("6692268113");
+       phoneDAOImpl.save(phone);*/
 	}
 }

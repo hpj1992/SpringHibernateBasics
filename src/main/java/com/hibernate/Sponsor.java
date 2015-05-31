@@ -1,10 +1,14 @@
 package com.hibernate;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -67,4 +71,7 @@ public class Sponsor {
 	public void setAddress(int address) {
 		this.address = address;
 	}
+	
+	@ManyToMany(mappedBy="sponsors")
+	private List<Employee> employees;
 }

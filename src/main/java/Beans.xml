@@ -20,6 +20,7 @@
                 <value>com.hibernate.Address</value>
                 <value>com.hibernate.Employee</value>
                 <value>com.hibernate.Sponsor</value>
+                <value>com.hibernate.Phone</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -39,6 +40,9 @@
     </bean>
     <bean id="EmployeeDAOImpl" class="com.hibernate.DAOImpl.EmployeeDAOImpl">
         <property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
+    </bean>
+    <bean id="PhoneDAOImpl" class="com.hibernate.DAOImpl.PhoneDAOImpl">
+    <property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory"></property>
     </bean>
  
  </beans>
